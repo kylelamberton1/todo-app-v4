@@ -44,10 +44,10 @@ def update(name):
 
 @app.route('/delete/<name>', methods=['GET', 'POST'])
 def delete(name):
-        task = Tasks.query.filter_by(name=name).first()
-        db.session.delete(task)
-        db.session.commit()
-        return redirect(url_for('read'))
+    task = Tasks.query.filter_by(name=name).first()
+    db.session.delete(task)
+    db.session.commit()
+    return redirect(url_for('read'))
 
 @app.route('/complete/<name>', methods=['GET'])
 def complete(name):
