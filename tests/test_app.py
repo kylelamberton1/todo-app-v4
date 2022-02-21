@@ -49,7 +49,7 @@ class TestCRUD(TestBase):
     def test_update_tasks(self):
         response = self.client.post(
             url_for('update', name="new task"),
-            data=dict(name="update task", description="this is an updated task", completed=True),
+            data=dict(name="blahblahblah", description="blahblahblah", completed=True),
             follow_redirects=True
         )
         self.assertIn("updated task", str(response.data))
